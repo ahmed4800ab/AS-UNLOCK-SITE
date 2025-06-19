@@ -887,7 +887,17 @@
             <span># اسرع_خدمة_في_مصر <span class="emoji-force">😉</span></span>
         </div>
         <nav class="main-nav">
-            <ul>
+            <button class="menu-toggle" aria-label="فتح القائمة" aria-expanded="false" aria-controls="mobile-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+            <ul class="desktop-menu">
+                <li><a href="index.html">الرئيسية</a></li>
+                <li><a href="privacy.html">سياسة الخصوصية</a></li>
+                <li><a href="terms.html">الشروط والسياسات</a></li>
+            </ul>
+            <ul class="mobile-menu" id="mobile-menu" hidden>
                 <li><a href="index.html">الرئيسية</a></li>
                 <li><a href="privacy.html">سياسة الخصوصية</a></li>
                 <li><a href="terms.html">الشروط والسياسات</a></li>
@@ -1655,6 +1665,24 @@
                 }
             });
         })();
+
+        // Hamburger menu toggle for mobile
+        const menuToggle = document.querySelector('.menu-toggle');
+        const mobileMenu = document.getElementById('mobile-menu');
+        if (menuToggle && mobileMenu) {
+            menuToggle.addEventListener('click', function() {
+                const expanded = this.getAttribute('aria-expanded') === 'true';
+                this.setAttribute('aria-expanded', !expanded);
+                mobileMenu.hidden = expanded;
+            });
+            // Close menu on link click (mobile)
+            mobileMenu.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', () => {
+                    menuToggle.setAttribute('aria-expanded', 'false');
+                    mobileMenu.hidden = true;
+                });
+            });
+        }
     </script>
 </body>
 </html>
