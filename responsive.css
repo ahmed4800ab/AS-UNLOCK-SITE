@@ -1,0 +1,926 @@
+/* ✅ ملف responsive.css للتصميم الريسبونسيف */
+
+/* ✅ شاشات صغيرة جدًا (أقل من 576px) - موبايل صغير */
+@media (max-width: 575.98px) {
+    /* ✅ الهيدر */
+    header {
+        padding: 8px 2%;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    header .branding img {
+        width: 25px;
+        height: 25px;
+    }
+
+    header .branding span {
+        font-size: 0.8rem;
+    }
+
+    header .contact-info {
+        gap: 10px;
+    }
+
+    header .contact-link {
+        font-size: 0.7rem;
+    }
+
+    header .social-icon {
+        font-size: 1rem;
+        margin-left: 5px;
+    }
+
+    /* ✅ القسم الأول */
+    .full-screen {
+        padding-top: 80px;
+        padding-bottom: 40px;
+    }
+
+    .first-section h1 {
+        font-size: 1.8rem;
+        margin-bottom: 30px;
+    }
+
+    .first-section .download-btn {
+        padding: 12px 30px;
+        font-size: 1rem;
+        border-radius: 30px;
+    }
+
+    /* ✅ القسم الثاني */
+    .second-section .container {
+        flex-direction: column;
+        gap: 40px;
+    }
+
+    .second-section .tablet img {
+        width: 90%;
+        max-width: 400px;
+    }
+
+    .second-section .info-box {
+        width: 90%;
+        max-width: 400px;
+        padding: 30px;
+    }
+
+    .second-section h2 {
+        font-size: 1.8rem;
+        margin-bottom: 20px;
+    }
+
+    .second-section p {
+        font-size: 1rem;
+        margin-bottom: 30px;
+    }
+
+    .second-section button {
+        padding: 12px 30px;
+        font-size: 1rem;
+        border-radius: 30px;
+    }
+
+    /* ✅ قسم المعرض */
+    .works {
+        padding-top: 30px;
+        padding-bottom: 50px;
+    }
+
+    .works .main-title {
+        font-size: 1.8rem;
+        margin-bottom: 15px;
+    }
+
+    .works .sub-title {
+        font-size: 1rem;
+        margin-bottom: 30px;
+    }
+
+    .works .gallery {
+        grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+        gap: 8px;
+        padding: 8px;
+        max-width: 100%;
+    }
+
+    .works .gallery li {
+        border-radius: 4px;
+        padding: 4px;
+        box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+        animation: fadeInUp 0.4s both;
+    }
+
+    .works .gallery li img {
+        border-radius: 6px;
+    }
+
+    /* ✅ قسم من نحن */
+    .about-us {
+        padding-top: 30px;
+        padding-bottom: 30px;
+    }
+
+    .about-us .section-title {
+        font-size: 2rem;
+        margin-bottom: 30px;
+    }
+
+    .about-us .section-description,
+    .about-us .contact-info,
+    .about-us .phone-number,
+    .about-us .closing-message,
+    .about-us .owner-name {
+        font-size: 1.2rem;
+        margin-bottom: 15px;
+    }
+
+    .about-us .phone-number a {
+        font-size: 1.2rem;
+    }
+
+    .centered-circular-image {
+        width: 200px;
+        height: 200px;
+    }
+
+    /* ✅ قسم الأسئلة الشائعة */
+    .faq {
+        padding: 30px 15px; /* ✅ تقليل الـ padding */
+    }
+
+    .faq-container {
+        max-width: 100%; /* ✅ عرض كامل */
+    }
+
+    .faq .main-title {
+        font-size: 1.8rem; /* ✅ حجم أصغر للعنوان */
+        margin-bottom: 15px;
+        text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3); /* ✅ ظل خفيف */
+    }
+
+    .faq .sub-title {
+        font-size: 1rem; /* ✅ حجم أصغر للوصف */
+        margin-bottom: 20px;
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2); /* ✅ ظل خفيف */
+    }
+
+    .faq-item {
+        margin-bottom: 10px; /* ✅ تقليل المسافة بين الكروت */
+    }
+
+    .faq-question {
+        font-size: 1rem; /* ✅ حجم نص أصغر */
+        padding: 12px 15px; /* ✅ تقليل الـ padding */
+    }
+
+    .faq-icon {
+        font-size: 1.1rem; /* ✅ حجم أيقونة أصغر */
+    }
+
+    .faq-answer {
+        font-size: 0.9rem; /* ✅ حجم نص أصغر */
+        padding: 0 15px; /* ✅ تقليل الـ padding */
+    }
+
+    .faq-answer.active {
+        padding: 12px 15px; /* ✅ إعادة الـ padding عند الفتح */
+    }
+
+    /* ✅ الفوتر */
+    .footer {
+        padding: 30px 15px;
+    }
+
+    .footer .contact-info p {
+        font-size: 0.9rem;
+    }
+
+    .footer .contact-info a.phone-number {
+        font-size: 1rem;
+    }
+
+    .footer .social-links {
+        gap: 10px;
+    }
+
+    .footer .social-icon {
+        font-size: 1.2rem;
+    }
+
+    .footer .copyright p {
+        font-size: 0.8rem;
+    }
+
+    /* ✅ زر العودة للأعلى */
+    .back-to-top {
+        bottom: 15px;
+        left: 15px;
+        padding: 8px 12px;
+    }
+
+    /* ✅ زر الدردشة */
+    .chat-btn {
+        bottom: 20px;
+        right: 20px;
+        padding: 12px 20px;
+        font-size: 16px;
+        border-radius: 50px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        z-index: 1000;
+    }
+
+    .chat-btn i {
+        font-size: 24px;
+        margin-right: 8px;
+    }
+
+    .chat-btn span {
+        display: inline; /* ✅ إظهار النص على الشاشات الصغيرة */
+        font-weight: 600;
+    }
+}
+
+/* ✅ شاشات موبايل متوسطة (من 576px إلى 767px) */
+@media (min-width: 576px) and (max-width: 767.98px) {
+    /* ✅ الهيدر */
+    header {
+        padding: 10px 3%;
+        flex-direction: row;
+    }
+
+    header .branding img {
+        width: 28px;
+        height: 28px;
+    }
+
+    header .branding span {
+        font-size: 0.85rem;
+    }
+
+    header .contact-link {
+        font-size: 0.75rem;
+    }
+
+    header .social-icon {
+        font-size: 1.1rem;
+    }
+
+    /* ✅ القسم الأول */
+    .first-section h1 {
+        font-size: 2.2rem;
+    }
+
+    .first-section .download-btn {
+        padding: 14px 40px;
+        font-size: 1.2rem;
+    }
+
+    /* ✅ القسم الثاني */
+    .second-section .container {
+        flex-direction: column;
+        gap: 50px;
+    }
+
+    .second-section .tablet img {
+        width: 85%;
+        max-width: 500px;
+    }
+
+    .second-section .info-box {
+        width: 85%;
+        max-width: 500px;
+        padding: 40px;
+    }
+
+    .second-section h2 {
+        font-size: 2rem;
+    }
+
+    .second-section p {
+        font-size: 1.1rem;
+    }
+
+    .second-section button {
+        padding: 14px 35px;
+        font-size: 1.1rem;
+    }
+
+    /* ✅ قسم المعرض */
+    .works {
+        padding-top: 30px;
+        padding-bottom: 50px;
+    }
+
+    .works .main-title {
+        font-size: 2rem;
+    }
+
+    .works .sub-title {
+        font-size: 1.1rem;
+    }
+
+    .works .gallery {
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+        gap: 12px;
+        padding: 10px;
+        max-width: 98%;
+    }
+
+    .works .gallery li {
+        border-radius: 6px;
+        padding: 6px;
+        box-shadow: 0 1.5px 4px rgba(0,0,0,0.045);
+        animation: fadeInUp 0.5s both;
+    }
+
+    .works .gallery li img {
+        border-radius: 8px;
+    }
+
+    /* ✅ قسم من نحن */
+    .about-us .section-title {
+        font-size: 2.5rem;
+    }
+
+    .about-us .section-description,
+    .about-us .contact-info,
+    .about-us .phone-number,
+    .about-us .closing-message,
+    .about-us .owner-name {
+        font-size: 1.3rem;
+    }
+
+    .centered-circular-image {
+        width: 250px;
+        height: 250px;
+    }
+
+    /* ✅ قسم الأسئلة الشائعة */
+    .faq {
+        padding: 40px 20px; /* ✅ padding مناسب */
+    }
+
+    .faq-container {
+        max-width: 90%; /* ✅ عرض أقل */
+    }
+
+    .faq .main-title {
+        font-size: 2rem; /* ✅ حجم أكبر شوية */
+        text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3); /* ✅ ظل */
+    }
+
+    .faq .sub-title {
+        font-size: 1.1rem; /* ✅ حجم أكبر شوية */
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2); /* ✅ ظل */
+    }
+
+    .faq-item {
+        margin-bottom: 12px; /* ✅ مسافة بين الكروت */
+    }
+
+    .faq-question {
+        font-size: 1.1rem; /* ✅ حجم نص */
+        padding: 14px 18px; /* ✅ padding مناسب */
+    }
+
+    .faq-icon {
+        font-size: 1.2rem; /* ✅ حجم أيقونة */
+    }
+
+    .faq-answer {
+        font-size: 1rem; /* ✅ حجم نص */
+        padding: 0 18px; /* ✅ تقليل الـ padding */
+    }
+
+    .faq-answer.active {
+        padding: 14px 18px; /* ✅ إعادة الـ padding */
+    }
+
+    /* ✅ الفوتر */
+    .footer .contact-info a.phone-number {
+        font-size: 1.1rem;
+    }
+
+    .footer .social-icon {
+        font-size: 1.3rem;
+    }
+
+    /* ✅ زر الدردشة */
+    .chat-btn {
+        bottom: 25px;
+        right: 25px;
+        padding: 14px 25px;
+        font-size: 18px;
+        border-radius: 50px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        z-index: 1000;
+    }
+
+    .chat-btn i {
+        font-size: 26px;
+        margin-right: 10px;
+    }
+
+    .chat-btn span {
+        display: inline;
+        font-weight: 600;
+    }
+}
+
+/* ✅ شاشات تابلت (من 768px إلى 991px) */
+@media (min-width: 768px) and (max-width: 991.98px) {
+    /* ✅ الهيدر */
+    header .branding img {
+        width: 30px;
+        height: 30px;
+    }
+
+    header .branding span {
+        font-size: 0.9rem;
+    }
+
+    header .contact-link {
+        font-size: 0.8rem;
+    }
+
+    header .social-icon {
+        font-size: 1.2rem;
+    }
+
+    /* ✅ القسم الأول */
+    .first-section h1 {
+        font-size: 2.5rem;
+    }
+
+    .first-section .download-btn {
+        padding: 16px 45px;
+        font-size: 1.3rem;
+    }
+
+    /* ✅ القسم الثاني */
+    .second-section .container {
+        flex-direction: row;
+        gap: 60px;
+    }
+
+    .second-section .tablet img {
+        width: 80%;
+        max-width: 600px;
+    }
+
+    .second-section .info-box {
+        width: 45%;
+        max-width: 550px;
+        padding: 50px;
+    }
+
+    .second-section h2 {
+        font-size: 2.2rem;
+    }
+
+    .second-section p {
+        font-size: 1.2rem;
+    }
+
+    .second-section button {
+        padding: 15px 40px;
+        font-size: 1.2rem;
+    }
+
+    /* ✅ قسم المعرض */
+    .works {
+        padding-top: 30px;
+        padding-bottom: 50px;
+    }
+
+    .works .main-title {
+        font-size: 2.2rem;
+    }
+
+    .works .sub-title {
+        font-size: 1.2rem;
+    }
+
+    .works .gallery {
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 16px;
+        padding: 14px;
+        max-width: 96%;
+    }
+
+    .works .gallery li {
+        border-radius: 8px;
+        padding: 8px;
+        box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+        animation: fadeInUp 0.6s both;
+    }
+
+    .works .gallery li img {
+        border-radius: 9px;
+    }
+
+    /* ✅ قسم من نحن */
+    .about-us .section-title {
+        font-size: 2.8rem;
+    }
+
+    .about-us .section-description,
+    .about-us .contact-info,
+    .about-us .phone-number,
+    .about-us .closing-message,
+    .about-us .owner-name {
+        font-size: 1.4rem;
+    }
+
+    .centered-circular-image {
+        width: 280px;
+        height: 280px;
+    }
+
+    /* ✅ قسم الأسئلة الشائعة */
+    .faq {
+        padding: 50px 25px; /* ✅ padding أكبر */
+    }
+
+    .faq-container {
+        max-width: 85%; /* ✅ عرض أقل */
+    }
+
+    .faq .main-title {
+        font-size: 2.5rem; /* ✅ حجم أكبر */
+        text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4); /* ✅ ظل أقوى */
+    }
+
+    .faq .sub-title {
+        font-size: 1.2rem; /* ✅ حجم أكبر */
+        text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3); /* ✅ ظل أقوى */
+    }
+
+    .faq-item {
+        margin-bottom: 15px; /* ✅ مسافة بين الكروت */
+    }
+
+    .faq-question {
+        font-size: 1.2rem; /* ✅ حجم نص */
+        padding: 15px 20px; /* ✅ padding عادي */
+    }
+
+    .faq-icon {
+        font-size: 1.3rem; /* ✅ حجم أيقونة */
+    }
+
+    .faq-answer {
+        font-size: 1.1rem; /* ✅ حجم نص */
+        padding: 0 20px; /* ✅ تقليل الـ padding */
+    }
+
+    .faq-answer.active {
+        padding: 15px 20px; /* ✅ إعادة الـ padding */
+    }
+}
+
+/* ✅ شاشات لاب توب صغيرة (من 992px إلى 1199px) */
+@media (min-width: 992px) and (max-width: 1199.98px) {
+    /* ✅ الهيدر */
+    header .branding span {
+        font-size: 0.95rem;
+    }
+
+    header .contact-link {
+        font-size: 0.85rem;
+    }
+
+    /* ✅ القسم الأول */
+    .first-section h1 {
+        font-size: 2.6rem;
+    }
+
+    /* ✅ القسم الثاني */
+    .second-section .container {
+        gap: 70px;
+    }
+
+    .second-section .tablet img {
+        width: 80%;
+        max-width: 650px;
+    }
+
+    .second-section .info-box {
+        width: 40%;
+        max-width: 600px;
+    }
+
+    /* ✅ قسم المعرض */
+    .works .gallery {
+        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+        max-width: 95%;
+    }
+
+    /* ✅ قسم من نحن */
+    .about-us .section-title {
+        font-size: 2.9rem;
+    }
+
+    .centered-circular-image {
+        width: 300px;
+        height: 300px;
+    }
+
+    /* ✅ قسم الأسئلة الشائعة */
+    .faq {
+        padding: 60px 30px; /* ✅ padding أكبر */
+    }
+
+    .faq-container {
+        max-width: 900px; /* ✅ عرض عادي */
+    }
+
+    .faq .main-title {
+        font-size: 2.6rem; /* ✅ حجم أكبر */
+        text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4); /* ✅ ظل أقوى */
+    }
+
+    .faq .sub-title {
+        font-size: 1.3rem; /* ✅ حجم أكبر */
+        text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3); /* ✅ ظل أقوى */
+    }
+
+    .faq-item {
+        margin-bottom: 15px; /* ✅ مسافة بين الكروت */
+    }
+
+    .faq-question {
+        font-size: 1.2rem; /* ✅ حجم نص */
+        padding: 15px 20px; /* ✅ padding عادي */
+    }
+
+    .faq-icon {
+        font-size: 1.3rem; /* ✅ حجم أيقونة */
+    }
+
+    .faq-answer {
+        font-size: 1.1rem; /* ✅ حجم نص */
+        padding: 0 20px; /* ✅ تقليل الـ padding */
+    }
+
+    .faq-answer.active {
+        padding: 15px 20px; /* ✅ إعادة الـ padding */
+    }
+}
+
+/* ✅ شاشات كبيرة (من 1200px إلى 1439px) */
+@media (min-width: 1200px) and (max-width: 1439.98px) {
+    /* ✅ القسم الثاني */
+    .second-section .container {
+        gap: 80px;
+    }
+
+    .second-section .tablet img {
+        width: 80%;
+        max-width: 700px;
+    }
+
+    /* ✅ قسم المعرض */
+    .works .gallery {
+        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+        max-width: 1200px;
+    }
+
+    /* ✅ قسم الأسئلة الشائعة */
+    .faq {
+        padding: 60px 30px; /* ✅ padding عادي */
+    }
+
+    .faq-container {
+        max-width: 1000px; /* ✅ عرض أكبر */
+    }
+
+    .faq .main-title {
+        font-size: 2.7rem; /* ✅ حجم أكبر */
+        text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4); /* ✅ ظل أقوى */
+    }
+
+    .faq .sub-title {
+        font-size: 1.4rem; /* ✅ حجم أكبر */
+        text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3); /* ✅ ظل أقوى */
+    }
+
+    .faq-item {
+        margin-bottom: 15px; /* ✅ مسافة بين الكروت */
+    }
+
+    .faq-question {
+        font-size: 1.2rem; /* ✅ حجم نص */
+        padding: 15px 20px; /* ✅ padding عادي */
+    }
+
+    .faq-icon {
+        font-size: 1.3rem; /* ✅ حجم أيقونة */
+    }
+
+    .faq-answer {
+        font-size: 1.1rem; /* ✅ حجم نص */
+        padding: 0 20px; /* ✅ تقليل الـ padding */
+    }
+
+    .faq-answer.active {
+        padding: 15px 20px; /* ✅ إعادة الـ padding */
+    }
+}
+
+/* ✅ شاشات كبيرة جدًا (1440px وأكتر) */
+@media (min-width: 1440px) {
+    /* ✅ الهيدر */
+    header {
+        padding: 10px 5%;
+    }
+
+    header .branding span {
+        font-size: 1rem;
+    }
+
+    header .contact-link {
+        font-size: 0.9rem;
+    }
+
+    header .social-icon {
+        font-size: 1.3rem;
+    }
+
+    /* ✅ القسم الأول */
+    .first-section h1 {
+        font-size: 3rem;
+    }
+
+    .first-section .download-btn {
+        padding: 20px 60px;
+        font-size: 1.5rem;
+    }
+
+    /* ✅ القسم الثاني */
+    .second-section .container {
+        gap: 100px;
+    }
+
+    .second-section .tablet img {
+        width: 80%;
+        max-width: 800px;
+    }
+
+    .second-section .info-box {
+        width: 35%;
+        max-width: 650px;
+        padding: 70px;
+    }
+
+    .second-section h2 {
+        font-size: 2.8rem;
+    }
+
+    .second-section p {
+        font-size: 1.4rem;
+    }
+
+    .second-section button {
+        padding: 18px 50px;
+        font-size: 1.4rem;
+    }
+
+    /* ✅ قسم المعرض */
+    .works .main-title {
+        font-size: 2.8rem;
+    }
+
+    .works .sub-title {
+        font-size: 1.4rem;
+    }
+
+    .works .gallery {
+        grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+        max-width: 1400px;
+    }
+
+    /* ✅ قسم من نحن */
+    .about-us .section-title {
+        font-size: 3.2rem;
+    }
+
+    .about-us .section-description,
+    .about-us .contact-info,
+    .about-us .phone-number,
+    .about-us .closing-message,
+    .about-us .owner-name {
+        font-size: 1.6rem;
+    }
+
+    .centered-circular-image {
+        width: 350px;
+        height: 350px;
+    }
+
+    /* ✅ قسم الأسئلة الشائعة */
+    .faq {
+        padding: 70px 40px; /* ✅ padding أكبر */
+    }
+
+    .faq-container {
+        max-width: 1100px; /* ✅ عرض أكبر */
+    }
+
+    .faq .main-title {
+        font-size: 2.8rem; /* ✅ حجم العنوان */
+        text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4); /* ✅ ظل أقوى */
+    }
+
+    .faq .sub-title {
+        font-size: 1.4rem; /* ✅ حجم الوصف */
+        text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3); /* ✅ ظل أقوى */
+    }
+
+    .faq-item {
+        margin-bottom: 20px; /* ✅ مسافة أكبر بين الكروت */
+    }
+
+    .faq-question {
+        font-size: 1.3rem; /* ✅ حجم نص أكبر */
+        padding: 18px 25px; /* ✅ padding أكبر */
+    }
+
+    .faq-icon {
+        font-size: 1.4rem; /* ✅ حجم أيقونة أكبر */
+    }
+
+    .faq-answer {
+        font-size: 1.2rem; /* ✅ حجم نص أكبر */
+        padding: 0 25px; /* ✅ تقليل الـ padding */
+    }
+
+    .faq-answer.active {
+        padding: 18px 25px; /* ✅ إعادة الـ padding */
+    }
+
+    /* ✅ الفوتر */
+    .footer .contact-info a.phone-number {
+        font-size: 1.3rem;
+    }
+
+    .footer .social-icon {
+        font-size: 1.6rem;
+    }
+}
+
+/* === زر الواتساب العام: موبايل وتابلت (أقل من 992px) === */
+@media (max-width: 991.98px) {
+    .whatsapp-btn {
+        position: fixed;
+        bottom: 16px;
+        right: 16px;
+        width: 48px;
+        height: 48px;
+        padding: 0 !important;
+        border-radius: 50% !important;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+        z-index: 1000;
+        background: #25d366;
+    }
+    .whatsapp-btn i {
+        font-size: 26px;
+        margin: 0 !important;
+        color: #fff;
+    }
+    .whatsapp-btn span {
+        display: none !important;
+    }
+}
+
+/* === زر الواتساب العام: شاشات كبيرة (992px فأكثر) === */
+@media (min-width: 992px) {
+    .whatsapp-btn {
+        position: fixed;
+        bottom: 30px;
+        right: 30px;
+        padding: 16px 32px;
+        border-radius: 50px;
+        display: flex;
+        align-items: center;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.25);
+        z-index: 1000;
+        background: #25d366;
+        font-size: 20px;
+    }
+    .whatsapp-btn i {
+        font-size: 26px;
+        margin-left: 8px;
+        color: #fff;
+    }
+    .whatsapp-btn span {
+        display: inline !important;
+        color: #fff;
+        font-weight: 600;
+        margin-right: 8px;
+    }
+}
