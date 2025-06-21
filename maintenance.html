@@ -502,7 +502,25 @@
         </div>
     </footer>
 
+    <!-- Admin Controls (Hidden) -->
+    <div id="admin-controls" style="position: fixed; bottom: 10px; right: 10px; z-index: 9999; display: none;">
+        <button onclick="MaintenanceMode.disable()" style="background: #e74c3c; color: white; border: none; padding: 10px; margin: 5px; border-radius: 5px; cursor: pointer;">
+            إلغاء الصيانة
+        </button>
+        <button onclick="MaintenanceMode.createMaintenanceFile()" style="background: #3498db; color: white; border: none; padding: 10px; margin: 5px; border-radius: 5px; cursor: pointer;">
+            إنشاء ملف الصيانة
+        </button>
+    </div>
+
     <script>
+        // Show admin controls with keyboard shortcut (Ctrl+Shift+A)
+        document.addEventListener('keydown', function(e) {
+            if (e.ctrlKey && e.shiftKey && e.key === 'A') {
+                const controls = document.getElementById('admin-controls');
+                controls.style.display = controls.style.display === 'none' ? 'block' : 'none';
+            }
+        });
+
         // Terminal typing effect
         document.addEventListener('DOMContentLoaded', function() {
             const terminalText = document.querySelector('.terminal-text');
