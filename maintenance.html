@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>وضع الصيانة - A.S UNLOCK</title>
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Cairo', Arial, 'Segoe UI', sans-serif;
+        }
+
+        body {
+            background: #0a0a0a;
+            color: #ffffff;
+            min-height: 100vh;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        /* Matrix Background Effect */
+        .matrix-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0.1;
+            z-index: -1;
+            background: 
+                linear-gradient(90deg, transparent 98%, #00ff00 100%),
+                linear-gradient(180deg, transparent 98%, #00ff00 100%);
+            background-size: 50px 50px;
+            animation: matrix 20s linear infinite;
+        }
+
+        @keyframes matrix {
+            0% { transform: translateY(0); }
+            100% { transform: translateY(50px); }
+        }
+
+        /* Header */
+        .header {
+            background: rgba(0, 0, 0, 0.9);
+            border-bottom: 2px solid #00ff00;
+            padding: 15px 0;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+        }
+
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo-section {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .logo-section img {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            border: 2px solid #00ff00;
+        }
+
+        .logo-section h2 {
+            color: #00ff00;
+            font-size: 1.3rem;
+            font-weight: 700;
+            text-shadow: 0 0 10px #00ff00;
+        }
+
+        .maintenance-indicator {
+            background: #ff0000;
+            color: white;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 700;
+            animation: blink 1s infinite;
+        }
+
+        @keyframes blink {
+            0%, 50% { opacity: 1; }
+            51%, 100% { opacity: 0.5; }
+        }
+
+        /* Main Content */
+        .main-content {
+            padding-top: 100px;
+            min-height: 100vh;
+        }
+
+        .maintenance-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        .maintenance-icon {
+            font-size: 8rem;
+            color: #ff0000;
+            margin-bottom: 30px;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
+
+        .maintenance-title {
+            font-size: 3rem;
+            font-weight: 900;
+            color: #ff0000;
+            margin-bottom: 20px;
+            text-shadow: 0 0 20px #ff0000;
+        }
+
+        .maintenance-subtitle {
+            font-size: 1.5rem;
+            color: #cccccc;
+            margin-bottom: 40px;
+        }
+
+        .status-container {
+            background: rgba(255, 255, 255, 0.05);
+            border: 2px solid #ff0000;
+            border-radius: 15px;
+            padding: 30px;
+            margin: 40px 0;
+            backdrop-filter: blur(10px);
+        }
+
+        .status-badge {
+            background: linear-gradient(45deg, #ff0000, #cc0000);
+            color: white;
+            padding: 15px 30px;
+            border-radius: 25px;
+            font-weight: 700;
+            font-size: 1.2rem;
+            display: inline-block;
+            margin-bottom: 20px;
+            box-shadow: 0 0 20px rgba(255, 0, 0, 0.5);
+        }
+
+        .maintenance-message {
+            color: #ffffff;
+            font-size: 1.2rem;
+            line-height: 1.8;
+            margin-bottom: 30px;
+        }
+
+        .progress-section {
+            margin: 30px 0;
+        }
+
+        .progress-bar {
+            width: 100%;
+            height: 15px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+            overflow: hidden;
+            margin-bottom: 15px;
+            border: 1px solid #00ff00;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #ff0000, #ff6600);
+            border-radius: 8px;
+            animation: progress 4s ease-in-out infinite;
+            box-shadow: 0 0 10px #ff0000;
+        }
+
+        @keyframes progress {
+            0% { width: 0%; }
+            50% { width: 65%; }
+            100% { width: 100%; }
+        }
+
+        .progress-text {
+            color: #00ff00;
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+
+        .technical-info {
+            background: rgba(0, 255, 0, 0.1);
+            border: 1px solid #00ff00;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 30px 0;
+            text-align: left;
+        }
+
+        .technical-info h3 {
+            color: #00ff00;
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+        }
+
+        .technical-info ul {
+            list-style: none;
+            color: #cccccc;
+        }
+
+        .technical-info li {
+            margin: 8px 0;
+            padding: 5px 0;
+            border-bottom: 1px solid rgba(0, 255, 0, 0.2);
+        }
+
+        .technical-info li:before {
+            content: "> ";
+            color: #00ff00;
+            font-weight: bold;
+        }
+
+        .contact-section {
+            background: rgba(255, 255, 255, 0.05);
+            border: 2px solid #00ff00;
+            border-radius: 15px;
+            padding: 40px;
+            margin: 40px 0;
+        }
+
+        .contact-title {
+            font-size: 2rem;
+            color: #00ff00;
+            margin-bottom: 30px;
+            font-weight: 700;
+        }
+
+        .whatsapp-contact {
+            background: linear-gradient(135deg, #25d366, #128c7e);
+            color: white;
+            padding: 30px;
+            border-radius: 15px;
+            text-decoration: none;
+            display: block;
+            transition: all 0.3s;
+            box-shadow: 0 5px 15px rgba(37, 211, 102, 0.3);
+            border: 2px solid #00ff00;
+        }
+
+        .whatsapp-contact:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(37, 211, 102, 0.4);
+            text-decoration: none;
+            color: white;
+        }
+
+        .whatsapp-contact i {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            display: block;
+        }
+
+        .whatsapp-contact h3 {
+            font-size: 1.8rem;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+
+        .whatsapp-contact p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            margin-bottom: 15px;
+        }
+
+        .whatsapp-contact .phone {
+            font-size: 1.3rem;
+            font-weight: 700;
+            background: rgba(255, 255, 255, 0.2);
+            padding: 10px 20px;
+            border-radius: 25px;
+            display: inline-block;
+        }
+
+        .footer {
+            background: rgba(0, 0, 0, 0.9);
+            border-top: 2px solid #00ff00;
+            color: #cccccc;
+            text-align: center;
+            padding: 30px 20px;
+            margin-top: 60px;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer p {
+            font-size: 1rem;
+            margin-bottom: 15px;
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .footer-links a {
+            color: #00ff00;
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: #ffffff;
+            text-shadow: 0 0 10px #00ff00;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .maintenance-title {
+                font-size: 2.5rem;
+            }
+
+            .maintenance-subtitle {
+                font-size: 1.2rem;
+            }
+
+            .maintenance-icon {
+                font-size: 6rem;
+            }
+
+            .contact-section {
+                padding: 30px 20px;
+            }
+
+            .contact-title {
+                font-size: 1.8rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .maintenance-title {
+                font-size: 2rem;
+            }
+
+            .maintenance-container {
+                padding: 40px 15px;
+            }
+
+            .status-container {
+                padding: 20px;
+            }
+
+            .contact-section {
+                padding: 25px 15px;
+            }
+        }
+
+        /* Terminal Effect */
+        .terminal-text {
+            font-family: 'Courier New', monospace;
+            color: #00ff00;
+            background: rgba(0, 0, 0, 0.8);
+            padding: 20px;
+            border-radius: 10px;
+            border: 1px solid #00ff00;
+            margin: 20px 0;
+            text-align: left;
+            font-size: 0.9rem;
+            line-height: 1.6;
+        }
+
+        .terminal-text::before {
+            content: "root@maintenance:~$ ";
+            color: #ff6600;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <!-- Matrix Background -->
+    <div class="matrix-bg"></div>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="header-content">
+            <div class="logo-section">
+                <img src="logo.PNG" alt="A.S UNLOCK Logo">
+                <h2>A.S UNLOCK</h2>
+            </div>
+            <div class="maintenance-indicator">
+                <i class="fas fa-exclamation-triangle"></i> وضع الصيانة
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="maintenance-container">
+            <!-- Maintenance Icon -->
+            <div class="maintenance-icon">
+                <i class="fas fa-tools"></i>
+            </div>
+
+            <!-- Title -->
+            <h1 class="maintenance-title">وضع الصيانة</h1>
+            <p class="maintenance-subtitle">الموقع تحت الصيانة الفنية</p>
+
+            <!-- Status Container -->
+            <div class="status-container">
+                <div class="status-badge">
+                    <i class="fas fa-exclamation-triangle"></i> صيانة فنية
+                </div>
+                
+                <p class="maintenance-message">
+                    نعتذر عن الإزعاج، نحن نقوم حالياً بإجراء صيانة فنية ضرورية على الموقع.
+                    <br><br>
+                    هذه الصيانة ضرورية لضمان الأداء الأمثل والأمان الكامل لخدمتكم.
+                    <br><br>
+                    سنعود قريباً مع تحسينات جديدة ومميزات إضافية!
+                </p>
+
+                <!-- Progress Section -->
+                <div class="progress-section">
+                    <div class="progress-bar">
+                        <div class="progress-fill"></div>
+                    </div>
+                    <p class="progress-text">نسبة إنجاز الصيانة: جاري العمل...</p>
+                </div>
+            </div>
+
+            <!-- Technical Information -->
+            <div class="technical-info">
+                <h3><i class="fas fa-cog"></i> تفاصيل الصيانة الفنية:</h3>
+                <ul>
+                    <li>تحديث أنظمة الأمان والخصوصية</li>
+                    <li>تحسين أداء الخوادم وقواعد البيانات</li>
+                    <li>إضافة ميزات جديدة وتحسينات على الواجهة</li>
+                    <li>فحص وإصلاح الأخطاء البرمجية</li>
+                    <li>تحديث شهادات SSL والتشفير</li>
+                    <li>تحسين التوافق مع المتصفحات الحديثة</li>
+                </ul>
+            </div>
+
+            <!-- Terminal Effect -->
+            <div class="terminal-text">
+                systemctl status maintenance.service
+                ● maintenance.service - A.S UNLOCK Maintenance Mode
+                   Loaded: loaded (/etc/systemd/system/maintenance.service; enabled)
+                   Active: active (running) since Mon 2025-01-20 10:00:00 EET
+                   Status: "Performing system maintenance"
+                   Main PID: 1234 (maintenance)
+                   Tasks: 5 (limit: 4915)
+                   Memory: 256.0M
+                   CGroup: /system.slice/maintenance.service
+                   └─1234 /usr/bin/maintenance --mode=full --priority=high
+            </div>
+
+            <!-- Contact Section -->
+            <div class="contact-section">
+                <h2 class="contact-title">
+                    <i class="fab fa-whatsapp"></i> تواصل معنا عبر واتساب
+                </h2>
+                
+                <a href="https://wa.me/201069062005" class="whatsapp-contact" target="_blank">
+                    <i class="fab fa-whatsapp"></i>
+                    <h3>واتساب فوري</h3>
+                    <p>تواصل معنا مباشرة عبر واتساب للحصول على الدعم الفوري</p>
+                    <div class="phone">01069062005</div>
+                </a>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <p>© 2025 A.S UNLOCK. جميع الحقوق محفوظة.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Terminal typing effect
+        document.addEventListener('DOMContentLoaded', function() {
+            const terminalText = document.querySelector('.terminal-text');
+            const originalText = terminalText.innerHTML;
+            terminalText.innerHTML = '';
+            
+            let i = 0;
+            function typeWriter() {
+                if (i < originalText.length) {
+                    terminalText.innerHTML += originalText.charAt(i);
+                    i++;
+                    setTimeout(typeWriter, 50);
+                }
+            }
+            
+            setTimeout(typeWriter, 1000);
+
+            // Add click effects to WhatsApp contact
+            const whatsappContact = document.querySelector('.whatsapp-contact');
+            whatsappContact.addEventListener('click', function() {
+                this.style.transform = 'scale(0.95)';
+                setTimeout(() => {
+                    this.style.transform = '';
+                }, 150);
+            });
+        });
+    </script>
+    
+    <!-- Maintenance Mode Script -->
+    <script src="maintenance.js"></script>
+</body>
+</html> 
